@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-plugin-prettier",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prettier": true,
+    "interface-name": false,
+    "no-empty": false,
+    "member-access": false,
+    "no-namespace": [true, "allow-declarations"],
+    "no-unused-expression": true,
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "import-sources-order": "lowercase-first",
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "variable-name": [
+      true,
+      "ban-keywords",
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case"
+    ]
+  },
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  }
+}
