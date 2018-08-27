@@ -15,6 +15,6 @@ if (process.env.NODE_ENV === 'development') {
   app.use(serve('dist/static'))
 }
 
-app.listen(serverPort, () => {
+app.listen(serverPort, serverHost, () => {
   debug('Server is now running at %s:%d.', serverHost, serverPort)
 })

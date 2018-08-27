@@ -17,4 +17,4 @@ export const serverPort = +process.env.PORT || 7000
 
 export const hashType = __DEV__ ? 'hash' : 'contenthash'
 
-export const publicPath = __DEV__ ? `http://${serverHost}:${serverPort}/` : '/'
+export const publicPath = '/'

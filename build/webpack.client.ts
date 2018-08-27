@@ -6,6 +6,7 @@ import { __DEV__, hashType, publicPath, resolve } from './config'
 import base from './webpack.base'
 
 export default merge(base, {
+  devtool: 'cheap-module-source-map',
   entry: {
     app: [resolve('src/index.tsx')],
   },
