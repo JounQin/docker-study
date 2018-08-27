@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev:build": "docker build -f Dockerfile.dev -t docker-study:dev .",
+    "dev": "docker run -it --name docker-study-dev -p 7000:7000 -p 7001:7001 -v $PWD:/app docker-study:dev",
     "build": "rimraf dist && cross-env DEBUG=1stg:* NODE_ENV=production concurrently \"webpack --config build/webpack.client.ts\" \"webpack --config build/webpack.server.ts\"",
     "start": "cross-env DEBUG=1stg:* node dist/server",
     "docker:build": "docker build -t docker-study .",
