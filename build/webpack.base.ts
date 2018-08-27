@@ -1,7 +1,7 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import { Configuration } from 'webpack'
 
-import { NODE_ENV, resolve } from './config'
+import { NODE_ENV } from './config'
 
 const config: Configuration = {
   mode: NODE_ENV,
@@ -23,7 +23,11 @@ const config: Configuration = {
       },
     ],
   },
-  plugins: [new ForkTsCheckerWebpackPlugin()],
+  plugins: [
+    new ForkTsCheckerWebpackPlugin({
+      tslint: true,
+    }),
+  ],
 }
 
 export default config
