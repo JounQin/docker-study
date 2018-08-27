@@ -7,11 +7,12 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "nodemon",
+    "dev:build": "docker build -f Dockerfile.dev -t docker-study:dev .",
+    "dev": "docker run -it --name docker-study-dev -p 7000:7000 -p 7001:7001 --rm -v $PWD:/app docker-study:dev",
     "build": "rimraf dist && cross-env DEBUG=1stg:* NODE_ENV=production concurrently \"webpack --config build/webpack.client.ts\" \"webpack --config build/webpack.server.ts\"",
     "start": "cross-env DEBUG=1stg:* node dist/server",
     "docker:build": "docker build -t docker-study .",
-    "docker:start": "docker run -d --name docker-study -p 80:7000 docker-study",
+    "docker:start": "docker run -d --name docker-study -p 80:7000 --rm docker-study",
     "lint": "tslint -p . -t stylish",
     "precommit": "lint-staged",
     "prune": "yarn --production --ignore-optional --ignore-scripts --prefer-offline --force"
@@ -30,6 +31,7 @@
     "exec": "cross-env DEBUG=1stg:* NODE_ENV=development ts-node server",
     "ext": "ts",
     "watch": [
+      "build",
       "server"
     ]
   },
@@ -49,7 +51,6 @@
   },
   "devDependencies": {
     "@types/debug": "^0.0.30",
-    "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
     "@types/html-webpack-plugin": "^3.2.0",
     "@types/koa": "^2.0.46",
     "@types/koa-static": "^4.0.0",

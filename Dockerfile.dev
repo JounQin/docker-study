@@ -1,0 +1,16 @@
+FROM node:alpine
+
+ENV HOST=0.0.0.0
+
+RUN mkdir -p /app
+
+VOLUME ["/app"]
+
+WORKDIR /app
+
+RUN yarn
+
+CMD ["npx", "nodemon"]
+
+EXPOSE 7000
+EXPOSE 7001
