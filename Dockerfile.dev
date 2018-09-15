@@ -6,7 +6,7 @@ VOLUME ["/app"]
 
 WORKDIR /app
 
-CMD ["yarn", "dev:run"]
+CMD npx nodemon
 
 EXPOSE 7000
 EXPOSE 7001

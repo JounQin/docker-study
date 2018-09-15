@@ -11,6 +11,6 @@ RUN yarn \
   && yarn run prune \
   && yarn cache clean
 
-CMD ["yarn", "start"]
+CMD yarn start
 
 EXPOSE 7000

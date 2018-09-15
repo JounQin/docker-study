@@ -6,7 +6,7 @@
     "jsx": "react",
     "lib": ["dom", "esnext"],
     "noImplicitAny": true,
-    "noImplicitThis": false,
+    "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "resolveJsonModule": true,

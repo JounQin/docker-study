@@ -23,11 +23,7 @@ const config: Configuration = {
       },
     ],
   },
-  plugins: [
-    new ForkTsCheckerWebpackPlugin({
-      tslint: true,
-    }),
-  ],
+  plugins: [new ForkTsCheckerWebpackPlugin()],
 }
 
 export default config
