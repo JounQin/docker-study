@@ -9,6 +9,7 @@
   "scripts": {
     "dev:build": "docker build -f Dockerfile.dev -t docker-study:dev .",
     "dev": "docker run -it --name docker-study-dev -p 7000:7000 -p 7001:7001 --rm -v $PWD:/app docker-study:dev",
+    "dev:win": "docker run -it -e IS_IN_DOCKER_FOR_WIN=1 --name docker-study-dev -p 7000:7000 -p 7001:7001 --rm -v %cd%:/app docker-study:dev -L",
     "build": "rimraf dist && cross-env DEBUG=1stg:* NODE_ENV=production concurrently \"webpack --config build/webpack.client.ts\" \"webpack --config build/webpack.server.ts\"",
     "start": "cross-env DEBUG=1stg:* node dist/server",
     "docker:build": "docker build -t docker-study .",

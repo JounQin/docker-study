@@ -12,4 +12,10 @@ export default koaWebpack({
     },
     port: 7001,
   },
+  devMiddleware: {
+    publicPath: null,
+    watchOptions: {
+      poll: !!process.env.IS_IN_DOCKER_FOR_WIN,
+    },
+  },
 })
