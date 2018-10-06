@@ -1,6 +1,6 @@
 import koaWebpack from 'koa-webpack'
 
-import { serverHost } from '../build/config'
+import { serverHost, serverPort } from '../build/config'
 import config from '../build/webpack.client'
 
 export default koaWebpack({
@@ -10,7 +10,7 @@ export default koaWebpack({
       client: '*',
       server: serverHost,
     },
-    port: 7001,
+    port: serverPort + 1,
   },
   devMiddleware: {
     publicPath: null,

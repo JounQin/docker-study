@@ -9,8 +9,7 @@ export const NODE_ENV: NodeEnv = (process.env.NODE_ENV as NodeEnv) || DEV
 
 export const __DEV__ = NODE_ENV === DEV
 
-export const resolve = (...args: string[]) =>
-  path.resolve(process.cwd(), ...args)
+export const { resolve } = path
 
 export const serverHost = process.env.HOST || '0.0.0.0'
 export const serverPort = +process.env.PORT || 7000
