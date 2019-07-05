@@ -48,7 +48,7 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "debug": "^4.0.1",
-    "koa": "^2.5.3",
+    "koa": "^2.7.0",
     "koa-static": "^5.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.8.6"
