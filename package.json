@@ -51,7 +51,7 @@
     "koa": "^2.5.3",
     "koa-static": "^5.0.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@types/debug": "^0.0.31",
